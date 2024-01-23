@@ -1,0 +1,111 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMuk7PCeNYFtaVc2IKgnhOv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/littlemissvinylgifts/git_test/blob/main/Chat%20Bot\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iHlbwmKhp4Ek",
+        "outputId": "8f410dcf-e5a7-4bf5-fb10-395b79696185"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: nltk in /usr/local/lib/python3.10/dist-packages (3.8.1)\n",
+            "Requirement already satisfied: click in /usr/local/lib/python3.10/dist-packages (from nltk) (8.1.7)\n",
+            "Requirement already satisfied: joblib in /usr/local/lib/python3.10/dist-packages (from nltk) (1.3.2)\n",
+            "Requirement already satisfied: regex>=2021.8.3 in /usr/local/lib/python3.10/dist-packages (from nltk) (2023.6.3)\n",
+            "Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from nltk) (4.66.1)\n"
+          ]
+        }
+      ],
+      "source": [
+        "pip install nltk\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from nltk.chat.util import Chat , reflections\n",
+        "pairs = [\n",
+        "    ['hello',['hello back']],\n",
+        "    ['my name is (.*)',['hello %1']],\n",
+        "    ['who built you',['you did']],\n",
+        "    [\"(thank you|thanks)\",[\"you're welcome\", \"no problem\", \"of course\"]]\n",
+        "]"
+      ],
+      "metadata": {
+        "id": "1HHepsFqqbTs"
+      },
+      "execution_count": 19,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "chat = Chat(pairs, reflections)\n",
+        "chat.converse()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KpfYZauZriQZ",
+        "outputId": "43fd35f8-0e55-485c-91a3-04ee84d95b02"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ">thank you\n",
+            "no problem\n",
+            ">thanks\n",
+            "of course\n",
+            ">thanks\n",
+            "of course\n",
+            ">thanks\n",
+            "no problem\n",
+            ">thanks\n",
+            "no problem\n",
+            ">thanks\n",
+            "no problem\n",
+            ">thank you\n",
+            "you're welcome\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
